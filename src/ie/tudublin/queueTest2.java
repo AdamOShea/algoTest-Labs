@@ -11,7 +11,7 @@ class QueueException extends Exception {
 
 // In Java an interface can often be the best way to 
 // describe an Abstract Data Type (ADT) such as Queue or Stack
-interface Queue {
+interface Queue1 {
     public void enQueue(int x) throws QueueException;
     public int deQueue(int i) throws QueueException;
     public boolean isEmpty();   
@@ -19,7 +19,7 @@ interface Queue {
 }
 
 
-class QueueLL implements Queue {
+class QueueLL implements Queue1 {
 
     private class Node {
         int data;
@@ -83,7 +83,7 @@ class QueueLL implements Queue {
 
 
 
-class QueueCB implements Queue {
+class QueueCB implements Queue1 {
     private int q[], back, front;
     private int qmax, size;
 
@@ -149,7 +149,7 @@ class QueueCB implements Queue {
 // here we test both implementations
 class QueueTest2 {
     public static void main(String[] arg) {
-        Queue q1, q2;
+        Queue1 q1, q2;
         q1 = new QueueLL();
         q2 = new QueueCB();
 
