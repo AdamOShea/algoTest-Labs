@@ -25,6 +25,12 @@ void siftUp( int k) {
    int v = a[k];
    a[0] = Integer.MAX_VALUE;
 
+   while(v > a[k/2])
+   {
+      a[k] = a[k/2];
+      k = k/2;
+   }
+   a[k] = v;
    // complete yourself from pseudocode in notes
    
 }
@@ -34,6 +40,20 @@ void siftUp( int k) {
 void siftDown( int k) {
    int v, j;
    v = a[k];
+   while(2*k <= N) {
+      j = 2*k;
+      if(j < N && a[j] < a[j+1])
+      {
+         j++;
+      }
+      if(v >= a[j]) 
+      {
+         break;
+      }
+      a[k] = a[j];
+      k = j;
+   }
+   a[k] = v;
    // complete yourself
   
 }
@@ -78,8 +98,10 @@ public static void main(String args[]) {
       r = (int) x; 
       System.out.println("Inserting " + r);
       h.insert(r);
-	  h.display();
+      h.display();
    } 
+   h.remove();
+   h.display();
 }
 
 

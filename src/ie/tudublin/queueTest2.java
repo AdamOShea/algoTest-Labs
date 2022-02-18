@@ -1,7 +1,6 @@
 // Exercise to separate ADT Queue from its implementation
 // and to provide 2 implementations. Also exception handling.
 
-package src.ie.tudublin;
 
 class QueueException extends Exception {
     public QueueException(String msg) {

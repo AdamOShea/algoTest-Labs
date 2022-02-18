@@ -1,6 +1,5 @@
 // StackTest.java
 // Linked list implementation of Stack
-package src.ie.tudublin;
 
 class Stack {
     

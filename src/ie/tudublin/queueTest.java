@@ -1,6 +1,6 @@
 // QueueTest.java
 // Allocation of Queue objects in main()
-package src.ie.tudublin;
+
 
 class Queue {
     private class Node {
