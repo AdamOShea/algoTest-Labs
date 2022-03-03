@@ -1,17 +1,18 @@
 // Sorted linked list with a sentinel node
 // Skeleton code
+
 import java.util.Scanner;
 
 class SortedLL
 {
     // internal data structure and
     // constructor code to be added here
-    class node 
+    class Node 
     {
         int data;
         Node next;
 
-        public node(int data) 
+        public Node(int data) 
         {
             this.data = data;
         }
@@ -35,7 +36,7 @@ class SortedLL
         curr = head;
         prev = null;
         z.data = x;
-        while (curr != null && curr.data < newNode.data) {
+        while (curr != null && curr.data < t.data) {
             prev = curr;
             curr = curr.next;
         }
@@ -51,14 +52,34 @@ class SortedLL
         t.next = curr;
     }    
     
-    /*
+    
     public boolean remove(int x) {
         Node prev, curr;
-        
-            }
-    */
+        curr = head;
+        prev = null;
+
+        if(curr != null && curr.data == x) {
+            head = curr.next;
+            return true;
+        }
+
+        while (curr != z && curr.data != x)
+        {
+            prev = curr;
+            curr = curr.next;
+        }
+        if(curr == z)
+        {
+            return false;
+        }
+
+        prev.next = curr.next;
+        return true;
+    }
+    
+    
     public boolean isEmpty() {
-        if (head = z){
+        if (head == z){
             return true;
         }
         return false;
@@ -94,7 +115,7 @@ class SortedLL
         }
         
         
-        /*
+        
         while(!list.isEmpty())  {
             System.out.println("\nInput a value to remove: ");
             Scanner in = new Scanner(System.in);
@@ -104,6 +125,6 @@ class SortedLL
             list.display(); }
             else System.out.println("\nValue not in list");                        
         }
-        */
+        
     }
 }
